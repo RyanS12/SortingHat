@@ -9,37 +9,68 @@ public class SortingHat {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int howMany= 100;
+		int howMany = 10;
+		
+		int numList[] = getRandom(howMany);
+		int numList1[] = getRandom(howMany);
+		
+		
 		
 		//int[] nums0 = getDescendingOrder(howMany);
 		//int[] nums0 = getAscendingOrder(howMany);
-		int[] nums0 = getRandom(howMany);
-		int[] nums1 = nums0.clone();
-		int[] nums2 = nums0.clone();
+//		int[] nums0 = getRandom(howMany);
+//		int[] nums1 = nums0.clone();
+//		int[] nums2 = nums0.clone();
+//		
+//		
+//		
+		//SelectionSort sSort = new SelectionSort(numList, "Selection Sort");
+//		
+		//doTiming(sSort);
+//		
+//		
+//		
+		//BubbleSort bSort = new BubbleSort(numList1, "Bubble Sort");
+//		
+		//doTiming(bSort);
+//		
+//		
+//		
+//		InsertionSort iSort = new InsertionSort(nums2, "InsertionSort");
+//		
+//		doTiming(iSort);
 		
 		
+	
+		//MergeSortNR mSortNR = new MergeSortNR(numList, "Merge non-recursive");
 		
 		
-		SelectionSort sSort = new SelectionSort(nums0, "Selection Sort");
+		//doTiming(mSortNR);
 		
-		doTiming(sSort);
-		
-		
-		
-		BubbleSort bSort = new BubbleSort(nums1, "Bubble Sort");
-		
-		doTiming(bSort);
+		MergeSortR mSortR = new MergeSortR(numList1, "Merge recursive");
 		
 		
+		doTiming(mSortR);
 		
-		InsertionSort ISort = new InsertionSort(nums2, "InsertionSort");
+		if(listCheck(numList1)) {
+			
+			System.out.println("The list is sorted.");
+			
+			
+		} else {
+			
+			System.out.println("The list is NOT sorted.");
+		}
 		
-		doTiming(ISort);
-		
-		//System.out.println(ISort.toString());
 	}
 	
 	
+	private static void merge(int i, int j, int k, int l) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	public static void doTiming(PapaSort s) {
 		
 		long start = System.currentTimeMillis();
@@ -103,6 +134,23 @@ public class SortingHat {
 		}
 		
 		return nList;
+		
+	}
+	
+	
+	public static boolean listCheck(int[] l) {
+		
+		for(int i = 0; i < l.length-1; i++) {
+			
+			if(l[i] > l[i+1]) {
+				
+				return false;
+				
+			}
+			
+		}
+		return true;
+		
 		
 	}
 	

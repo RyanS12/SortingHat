@@ -39,7 +39,7 @@ public abstract class PapaSort {
 	}
 	
 	public void setElement(int whichE, int val) {
-		myList [whichE] = val; 
+		myList [whichE] = val;
 	}
 	
 	public int getLength() {
